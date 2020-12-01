@@ -564,7 +564,7 @@ public class StrUtils {
     }
 
 
-    public static String jsonToParam(JSONObject object) {
+    public static String jsonToParam(HashMap<String,Object> object) {
         StringBuilder sb = new StringBuilder();
         try {
             Iterator<String> keys = object.keySet().iterator();

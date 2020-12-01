@@ -20,7 +20,7 @@ public class FileUtils {
 
 
 
-    public void delteFilesByPath(String tempLdatePath){
+    public synchronized void delteFilesByPath(String tempLdatePath){
         File file = new File(tempLdatePath);
         if(file.exists()&&file.isDirectory()){
             File[] files = file.listFiles();

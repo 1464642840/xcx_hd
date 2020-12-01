@@ -137,11 +137,6 @@
             <artifactId>jetty-io</artifactId>
             <version>9.4.9.v20180320</version>
         </dependency>
-        <dependency>
-            <groupId>com.otimes</groupId>
-            <artifactId>ccc</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
 
     </dependencies>
 

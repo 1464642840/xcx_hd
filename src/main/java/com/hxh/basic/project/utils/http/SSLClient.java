@@ -1,6 +1,5 @@
 package com.hxh.basic.project.utils.http;
 
-import com.dhhe.qichamao.util.DefineCookieStrage;
 import org.apache.http.client.HttpRequestRetryHandler;
 import org.apache.http.client.config.CookieSpecs;
 import org.apache.http.client.config.RequestConfig;
@@ -18,6 +17,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.client.LaxRedirectStrategy;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
+import org.apache.http.impl.cookie.DefaultCookieSpec;
 import org.apache.http.impl.cookie.NetscapeDraftSpecProvider;
 import org.apache.http.impl.cookie.RFC6265CookieSpecProvider;
 import org.apache.http.protocol.HttpContext;
@@ -53,7 +53,7 @@ public class SSLClient {
 			@Override
 			public CookieSpec create(HttpContext context) {
 				// TODO Auto-generated method stub
-				return new DefineCookieStrage();
+				return new DefaultCookieSpec();
 
 			}
 		};

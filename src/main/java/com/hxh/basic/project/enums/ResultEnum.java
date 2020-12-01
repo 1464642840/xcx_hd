@@ -1,6 +1,7 @@
 package com.hxh.basic.project.enums;
 
 
+import lombok.Data;
 import lombok.Getter;
 
 import java.text.MessageFormat;
@@ -63,14 +64,19 @@ public enum ResultEnum {
     /**
      * 请求参数不能为空
      */
-    REQ_PARAM_NOT_NULL(111, "请求参数{0}不能为空");
-  
 
+
+    REQ_PARAM_NOT_NULL(111, "请求参数{0}不能为空");
+
+    private final String messagePattrn = "请求参数{0}不能为空";
     private Integer code;
 
     private String msg;
     private String param;
 
+    public String getMessagePattrn() {
+        return this.messagePattrn;
+    }
 
 
     ResultEnum(Integer code, String msg) {
@@ -94,8 +100,8 @@ public enum ResultEnum {
     }
 
     public ResultEnum setParam(String s) {
-        this.param=s;
-        this.msg = param!=null?MessageFormat.format(msg, getParam()):msg;
+        this.param = s;
+        this.msg = param != null ? MessageFormat.format(getMessagePattrn(), getParam()) : msg;
         return this;
     }
 }
